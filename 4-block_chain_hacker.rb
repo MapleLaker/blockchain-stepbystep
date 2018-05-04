@@ -1,6 +1,5 @@
 require 'digest'
 require 'pp'
-require 'test/unit'
 
 class Block
 	attr_reader :data
@@ -50,11 +49,8 @@ end
 
 # generate block
 b1 = Block.new("spend 100","0000000000000000000000000000000000000000000000000000")
-
 b2 = Block.new("spend 200", b1.hash)
-
 b3 = Block.new("spend 300", b2.hash)
-
 b4 = Block.new("spend 400", b3.hash)
 
 #validation
@@ -65,13 +61,13 @@ equal(b4.prev, b3.hash )
 
 #hacker 1
 b2.setData("not spend 200")
-
+#this validate did not find its "broken"
 equal(b1.prev, "0000000000000000000000000000000000000000000000000000" )
 equal(b2.prev, b1.hash )
 equal(b3.prev, b2.hash )
 equal(b4.prev, b3.hash )
 
-# strong validation
+# strong validation - find its "broken"
 hash1 = sha("#{b1.nonce}#{b1.prev}#{b1.data}")
 hash2 = sha("#{b2.nonce}#{b2.prev}#{b2.data}")
 hash3 = sha("#{b3.nonce}#{b3.prev}#{b3.data}")
@@ -80,5 +76,5 @@ equal(b2.prev, hash1 )
 equal(b3.prev, hash2 )
 equal(b4.prev, hash3 )
 
-
+#As the result, @hash is not needed to save
 
