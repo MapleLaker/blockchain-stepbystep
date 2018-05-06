@@ -33,3 +33,29 @@ end # method compute_hash_with_proof_of_work
 	end
 
 end
+
+=begin
+difficuty is 0 (4 bits)
+Start searching...
+Elapse time is 0.0000 seconds, Hashes calculated 56
+difficuty is 00 (8 bits)
+Start searching...
+Elapse time is 0.0000 seconds, Hashes calculated 143
+difficuty is 000 (12 bits)
+Start searching...
+Elapse time is 0.0000 seconds, Hashes calculated 3834
+difficuty is 0000 (16 bits)
+Start searching...
+Elapse time is 0.0468 seconds, Hashes calculated 26762
+Hash rate is 571837 hashes per seconds
+difficuty is 00000 (20 bits)
+Start searching...
+Elapse time is 0.2184 seconds, Hashes calculated 118592
+Hash rate is 543003 hashes per seconds
+difficuty is 000000 (24 bits)
+Start searching...
+Elapse time is 31.8729 seconds, Hashes calculated 21554046
+Hash rate is 676250 hashes per seconds
+difficuty is 0000000 (28 bits)
+Start searching...
+=end
